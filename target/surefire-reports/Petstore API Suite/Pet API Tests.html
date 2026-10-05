@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>TestNG:  Pet API Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Pet API Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>32/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Sep 23 17:52:49 EDT 2026</td>
+</tr>
+<tr><td>Total time:</td><td>15 seconds (15127 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-007 - Create pet with invalid status", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-018 - Get pet using maximum Long ID", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-023 - Update pet and verify changed status", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-022 - Verify deleted pet cannot be retrieved", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-030 - Smoke test status search", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-026 - Smoke test create pet", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-008 - Get a non-existing pet", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-020 - Create pet using minimum valid fields", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-024 - Verify available pets can be searched", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-029 - Smoke test delete pet", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-016 - Get pet using ID zero", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-028 - Smoke test update pet", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-011 - Create pet with special characters", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-014 - Create pet with long name", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-001 - Create a pet successfully", "Pet CRUD API testing"</td>
+<td></td>
+<td>2</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-027 - Smoke test get pet", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-004 - Delete an existing pet successfully", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-005 - Find pets by valid status", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-015 - Create pet with multiple photo URLs", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-006 - Create pet without required name", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-017 - Get pet using ID one", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-019 - Get pet using minimum Long ID", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-003 - Update an existing pet successfully", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-010 - Get pet using non-numeric ID", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-031 - Get pet should respond quickly", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-009 - Get pet using negative ID", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-012 - Create pet with Unicode characters", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-013 - Create pet with empty name", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-021 - Complete pet CRUD lifecycle", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Complete Pet CRUD lifecycle", "Pet CRUD API testing"</td>
+<td></td>
+<td>1</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-002 - Get an existing pet successfully", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-025 - Verify sold pets can be searched", "Pet CRUD API testing"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@c03cf28</td></tr>
+</table><p>
+</body>
+</html>

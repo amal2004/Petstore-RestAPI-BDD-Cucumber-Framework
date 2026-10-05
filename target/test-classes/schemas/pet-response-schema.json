@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+
+  "type": "object",
+
+  "required": [
+    "id",
+    "name",
+    "photoUrls"
+  ],
+
+  "properties": {
+
+    "id": {
+      "type": "integer"
+    },
+
+    "name": {
+      "type": "string"
+    },
+
+    "category": {
+      "type": "object"
+    },
+
+    "photoUrls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "tags": {
+      "type": "array"
+    },
+
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "pending",
+        "sold"
+      ]
+    }
+
+  }
+}

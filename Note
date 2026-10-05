@@ -1,0 +1,1 @@
+mvn test "-Dcucumber.filter.tags=@smoke or @regression"

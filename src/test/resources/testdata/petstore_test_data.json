@@ -1,0 +1,606 @@
+{
+  "config": {
+    "baseUrl": "https://petstore.swagger.io/v2",
+    "validApiKey": "special-key",
+    "invalidApiKey": "invalid-key"
+  },
+  "pet": {
+    "positive": {
+      "createPet": {
+        "testCaseId": "PET-ADD-001",
+        "id": 900001,
+        "name": "Max",
+        "category": {
+          "id": 1,
+          "name": "Dogs"
+        },
+        "photoUrls": [
+          "https://example.com/max.jpg"
+        ],
+        "tags": [
+          {
+            "id": 1,
+            "name": "friendly"
+          }
+        ],
+        "status": "available"
+      },
+      "createPetJson": {
+        "testCaseId": "PET-ADD-002",
+        "id": 900002,
+        "name": "Bella",
+        "category": {
+          "id": 1,
+          "name": "Dogs"
+        },
+        "photoUrls": [
+          "https://example.com/bella.jpg"
+        ],
+        "tags": [
+          {
+            "id": 2,
+            "name": "calm"
+          }
+        ],
+        "status": "available"
+      },
+      "createPetXml": {
+        "testCaseId": "PET-ADD-003",
+        "id": 900003,
+        "name": "Charlie",
+        "category": {
+          "id": 2,
+          "name": "Cats"
+        },
+        "photoUrls": [
+          "https://example.com/charlie.jpg"
+        ],
+        "tags": [
+          {
+            "id": 3,
+            "name": "playful"
+          }
+        ],
+        "status": "available"
+      },
+      "createPetForm": {
+        "testCaseId": "PET-ADD-004",
+        "id": 900004,
+        "name": "Daisy",
+        "photoUrls": [
+          "https://example.com/daisy.jpg"
+        ],
+        "status": "available"
+      },
+      "updatePet": {
+        "testCaseId": "PET-UPD-001",
+        "name": "MaxUpdated",
+        "category": {
+          "id": 2,
+          "name": "UpdatedDogs"
+        },
+        "photoUrls": [
+          "https://example.com/max-updated.jpg"
+        ],
+        "tags": [
+          {
+            "id": 1,
+            "name": "friendly"
+          }
+        ],
+        "status": "sold"
+      },
+      "existingPetForGet": {
+        "testCaseId": "PET-GET-001",
+        "id": 900005,
+        "name": "Rex",
+        "photoUrls": [
+          "https://example.com/rex.jpg"
+        ],
+        "status": "available"
+      },
+      "existingPetForDelete": {
+        "testCaseId": "PET-DEL-001",
+        "id": 900006,
+        "name": "Luna",
+        "photoUrls": [
+          "https://example.com/luna.jpg"
+        ],
+        "status": "available"
+      },
+      "statusesToVerify": [
+        "available",
+        "pending",
+        "sold"
+      ]
+    },
+    "negative": {
+      "missingName": {
+        "testCaseId": "PET-ADD-005",
+        "id": 98765003,
+        "name": null,
+        "photoUrls": [
+          "https://example.com/no-name.jpg"
+        ]
+      },
+      "missingPhotoUrls": {
+        "testCaseId": "PET-ADD-006",
+        "id": 98765004,
+        "name": "NoPhotosPet",
+        "photoUrls": null
+      },
+      "missingNameAndPhotoUrls": {
+        "testCaseId": "PET-ADD-007",
+        "id": 98765005,
+        "name": null,
+        "photoUrls": null
+      },
+      "malformedJson": {
+        "testCaseId": "PET-ADD-008",
+        "rawBody": "{bad"
+      },
+      "invalidStatus": {
+        "testCaseId": "PET-ADD-009",
+        "id": 98765006,
+        "name": "InvalidStatusPet",
+        "photoUrls": [
+          "https://example.com/test.jpg"
+        ],
+        "status": "invalid-status"
+      },
+      "nonExistingPetId": {
+        "testCaseId": "PET-GET-003",
+        "note": "ID is generated at runtime (Math.abs(System.nanoTime())) rather than a fixed value, since a static sentinel like 999999999 eventually collides with real pets created by other test suites on the shared public demo server."
+      },
+      "nonIntegerPetId": {
+        "testCaseId": "PET-GET-004",
+        "id": "abc"
+      },
+      "injectionLikeId": {
+        "testCaseId": "PET-GET-006",
+        "id": "1' OR 1=1"
+      },
+      "nonExistentPetForDelete": {
+        "testCaseId": "PET-DEL-003",
+        "note": "ID is generated at runtime (Math.abs(System.nanoTime())) rather than a fixed value, since a static sentinel like 999999999 eventually collides with real pets created by other test suites on the shared public demo server."
+      },
+      "nonIntegerIdForDelete": {
+        "testCaseId": "PET-DEL-004",
+        "id": "abc"
+      }
+    },
+    "edge": {
+      "emptyPhotoUrls": {
+        "testCaseId": "PET-ADD-010",
+        "id": 98765007,
+        "name": "EmptyPhotosPet",
+        "photoUrls": []
+      },
+      "emptyName": {
+        "testCaseId": "PET-ADD-011",
+        "id": 98765008,
+        "name": "",
+        "photoUrls": [
+          "https://example.com/test.jpg"
+        ]
+      },
+      "extraProperty": {
+        "testCaseId": "PET-ADD-012",
+        "id": 98765009,
+        "name": "extra",
+        "photoUrls": [
+          "https://example.com/extra.jpg"
+        ],
+        "unexpected": "value"
+      },
+      "specialCharacters": {
+        "testCaseId": "PET-DATA-008",
+        "id": 98765010,
+        "name": "Max@#$%^&*()",
+        "photoUrls": [
+          "https://example.com/test.jpg"
+        ],
+        "status": "available"
+      },
+      "unicodeName": {
+        "testCaseId": "PET-DATA-009",
+        "id": 98765011,
+        "name": "\u72ac\ud83d\udc15",
+        "photoUrls": [
+          "https://example.com/dog.jpg"
+        ],
+        "status": "available"
+      },
+      "longName": {
+        "testCaseId": "PET-DATA-011",
+        "id": 98765012,
+        "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+        "photoUrls": [
+          "https://example.com/test.jpg"
+        ],
+        "status": "available"
+      },
+      "multiplePhotos": {
+        "testCaseId": "PET-DATA-012",
+        "id": 98765013,
+        "name": "PhotoPet",
+        "photoUrls": [
+          "https://example.com/1.jpg",
+          "https://example.com/2.jpg",
+          "https://example.com/3.jpg"
+        ],
+        "status": "available"
+      }
+    },
+    "boundary": {
+      "zeroId": {
+        "testCaseId": "PET-DATA-013",
+        "id": 0
+      },
+      "negativeOneId": {
+        "testCaseId": "PET-GET-005",
+        "id": -1
+      },
+      "maxInt64Id": {
+        "testCaseId": "PET-GET-005",
+        "id": 9223372036854775807
+      },
+      "minimumValidPet": {
+        "testCaseId": "PET-DATA-017",
+        "id": 98765014,
+        "name": "A",
+        "photoUrls": [
+          "https://example.com/a.jpg"
+        ]
+      },
+      "deleteZeroId": {
+        "testCaseId": "PET-DEL-005",
+        "id": 0
+      },
+      "deleteNegativeOneId": {
+        "testCaseId": "PET-DEL-005",
+        "id": -1
+      }
+    },
+    "findByStatus": {
+      "validStatuses": [
+        "available",
+        "pending",
+        "sold"
+      ],
+      "invalidStatus": "invalid-status",
+      "emptyStatus": "",
+      "uppercaseStatus": "AVAILABLE"
+    },
+    "findByTags": {
+      "singleTag": "tag1",
+      "multipleTags": [
+        "tag1",
+        "tag2"
+      ],
+      "threeTags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ],
+      "duplicateTags": [
+        "tag1",
+        "tag1"
+      ],
+      "emptyTag": "",
+      "specialCharacterTag": "tag !@#$%"
+    },
+    "uploadImage": {
+      "petForUpload": {
+        "testCaseId": "PET-UPLOAD-001",
+        "id": 900010,
+        "name": "UploadPet",
+        "photoUrls": [
+          "https://example.com/upload.jpg"
+        ],
+        "status": "available"
+      },
+      "validImageFileName": "pet-test-image.txt",
+      "validImageContent": "test-image",
+      "additionalMetadata": "Uploaded via automated test",
+      "nonExistentPetId": "ID is generated at runtime (Math.abs(System.nanoTime())) rather than a fixed value, since a static sentinel like 999999999 eventually collides with real pets created by other test suites on the shared public demo server.",
+      "unsupportedContentType": "text/plain",
+      "emptyFileName": "empty.bin",
+      "largeFileName": "large.bin",
+      "largeFileSizeBytes": 1048576,
+      "maliciousMetadata": "../../../../tmp/pwned"
+    }
+  },
+  "store": {
+    "inventory": {
+      "validApiKey": "special-key",
+      "invalidApiKey": "invalid-key"
+    },
+    "order": {
+      "positive": {
+        "createOrder": {
+          "testCaseId": "ORDER-ADD-001",
+          "id": 950001,
+          "petId": 900001,
+          "quantity": 1,
+          "shipDate": "2026-10-01T09:00:00.000Z",
+          "status": "placed",
+          "complete": false
+        },
+        "createOrderJson": {
+          "testCaseId": "ORDER-ADD-002",
+          "id": 950002,
+          "petId": 900001,
+          "quantity": 2,
+          "shipDate": "2026-10-02T09:00:00.000Z",
+          "status": "placed",
+          "complete": false
+        },
+        "createOrderXml": {
+          "testCaseId": "ORDER-ADD-003",
+          "id": 950003,
+          "petId": 900001,
+          "quantity": 1,
+          "shipDate": "2026-10-03T09:00:00.000Z",
+          "status": "approved",
+          "complete": false
+        },
+        "createOrderForm": {
+          "testCaseId": "ORDER-ADD-004",
+          "id": 950004,
+          "petId": 900001,
+          "quantity": 1,
+          "shipDate": "2026-10-04T09:00:00.000Z",
+          "status": "placed",
+          "complete": false
+        },
+        "statusesToVerify": [
+          "placed",
+          "approved",
+          "delivered"
+        ],
+        "orderIdBelow1000": 999
+      },
+      "negative": {
+        "emptyBody": {
+          "testCaseId": "ORDER-ADD-005",
+          "rawBody": ""
+        },
+        "invalidStatus": {
+          "testCaseId": "ORDER-ADD-007",
+          "id": 950005,
+          "petId": 900001,
+          "quantity": 1,
+          "shipDate": "2026-10-05T09:00:00.000Z",
+          "status": "invalid-status",
+          "complete": false
+        },
+        "invalidShipDate": {
+          "testCaseId": "ORDER-ADD-008",
+          "id": 950006,
+          "petId": 900001,
+          "quantity": 1,
+          "shipDate": "not-a-date",
+          "status": "placed",
+          "complete": false
+        },
+        "nonIntegerOrderId": "abc"
+      },
+      "boundary": {
+        "quantityMinusOne": -1,
+        "quantityZero": 0,
+        "quantityOne": 1,
+        "quantityMaxInt32": 2147483647,
+        "getOrderValidIds": [
+          0,
+          1,
+          5,
+          11
+        ],
+        "getOrderExceptionIds": [
+          6,
+          10
+        ],
+        "getOrderLargeInt64Id": 9223372036854775807,
+        "getOrderNegativeId": -1,
+        "deleteOrderIdBelow1000": [
+          -1,
+          0,
+          1,
+          999
+        ],
+        "deleteOrderId1000": 1000,
+        "deleteOrderId1001": 1001
+      }
+    }
+  },
+  "user": {
+    "positive": {
+      "createUser": {
+        "testCaseId": "USER-CREATE-001",
+        "id": 970001,
+        "username": "jdoe_qa",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "jdoe@example.com",
+        "password": "P@ss12345",
+        "phone": "555-0100",
+        "userStatus": 1
+      },
+      "createUserFull": {
+        "testCaseId": "USER-CREATE-002",
+        "id": 970002,
+        "username": "asmith_qa",
+        "firstName": "Alice",
+        "lastName": "Smith",
+        "email": "asmith@example.com",
+        "password": "P@ss67890",
+        "phone": "555-0101",
+        "userStatus": 1
+      },
+      "createUserJson": {
+        "testCaseId": "USER-CREATE-003",
+        "id": 970003,
+        "username": "bwilliams_qa",
+        "firstName": "Bob",
+        "lastName": "Williams",
+        "email": "bwilliams@example.com",
+        "password": "P@ss11111",
+        "phone": "555-0102",
+        "userStatus": 1
+      },
+      "createUserXml": {
+        "testCaseId": "USER-CREATE-004",
+        "id": 970004,
+        "username": "cjones_qa",
+        "firstName": "Carol",
+        "lastName": "Jones",
+        "email": "cjones@example.com",
+        "password": "P@ss22222",
+        "phone": "555-0103",
+        "userStatus": 1
+      },
+      "createUserForm": {
+        "testCaseId": "USER-CREATE-005",
+        "id": 970005,
+        "username": "dbrown_qa",
+        "firstName": "Dan",
+        "lastName": "Brown",
+        "email": "dbrown@example.com",
+        "password": "P@ss33333",
+        "phone": "555-0104",
+        "userStatus": 1
+      },
+      "userForLogin": {
+        "testCaseId": "LOGIN-001",
+        "username": "login_user_qa",
+        "password": "P@ss44444"
+      },
+      "userWithSpecialCharPassword": {
+        "testCaseId": "LOGIN-009",
+        "username": "specialchar_user_qa",
+        "password": "P@$$w0rd!#%&*()"
+      },
+      "userForUpdate": {
+        "testCaseId": "USER-UPD-009",
+        "firstName": "Updated"
+      },
+      "usersList": [
+        {
+          "id": 970010,
+          "username": "listuser1_qa",
+          "firstName": "List",
+          "lastName": "One",
+          "email": "listuser1@example.com",
+          "password": "P@ss55555",
+          "phone": "555-0105",
+          "userStatus": 1
+        },
+        {
+          "id": 970011,
+          "username": "listuser2_qa",
+          "firstName": "List",
+          "lastName": "Two",
+          "email": "listuser2@example.com",
+          "password": "P@ss66666",
+          "phone": "555-0106",
+          "userStatus": 1
+        }
+      ]
+    },
+    "negative": {
+      "emptyUser": {
+        "testCaseId": "USER-CREATE-006"
+      },
+      "emptyBody": {
+        "testCaseId": "USER-CREATE-007",
+        "rawBody": ""
+      },
+      "duplicateUsername": "testuser",
+      "invalidDataTypes": {
+        "testCaseId": "USER-CREATE-009",
+        "id": "not-int",
+        "username": "bad"
+      },
+      "nonEmailFormattedEmail": {
+        "testCaseId": "USER-CREATE-010",
+        "email": "not-an-email"
+      },
+      "objectInsteadOfArray": {
+        "testCaseId": "USER-LIST-004",
+        "rawBody": "{\"username\":\"x\"}"
+      },
+      "invalidPropertyTypesInList": {
+        "testCaseId": "USER-LIST-005",
+        "rawBody": "[{\"id\":\"bad\"}]"
+      },
+      "largeUserListSize": 100,
+      "invalidUsername": "invalid-user-does-not-exist",
+      "invalidPassword": "wrong-password",
+      "invalidCredentialsUsername": "invalid-user",
+      "invalidCredentialsPassword": "invalid-password",
+      "injectionUsername": "' OR '1'='1",
+      "injectionPassword": "' OR '1'='1",
+      "nonexistentUsername": "missing-user-qa",
+      "invalidUsernameInputPath": "%20",
+      "emptyUsernamePath": "",
+      "pathTraversalUsername": "..%2F..%2Fetc%2Fpasswd"
+    },
+    "boundary": {
+      "knownUsername": "user1"
+    },
+    "headers": {
+      "expectedOnLogin": [
+        "X-Rate-Limit",
+        "X-Expires-After"
+      ]
+    }
+  },
+  "regression": {
+    "uniqueTagValue": "regression-unique-tag",
+    "petForE2E": {
+      "id": 990001,
+      "name": "RegressionPet",
+      "photoUrls": [
+        "https://example.com/regression.jpg"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "regression-unique-tag"
+        }
+      ],
+      "status": "available"
+    },
+    "orderForE2E": {
+      "id": 990101,
+      "petId": 990001,
+      "quantity": 1,
+      "shipDate": "2026-10-10T09:00:00.000Z",
+      "status": "placed",
+      "complete": false
+    },
+    "userForE2E": {
+      "id": 990201,
+      "username": "e2e_user_qa",
+      "firstName": "E2E",
+      "lastName": "Regression",
+      "email": "e2e_user@example.com",
+      "password": "P@ssE2E123",
+      "phone": "555-0199",
+      "userStatus": 1
+    },
+    "petStatusesToValidate": [
+      "available",
+      "pending",
+      "sold"
+    ],
+    "orderStatusesToValidate": [
+      "placed",
+      "approved",
+      "delivered"
+    ],
+    "unsupportedPetStatus": "invalid-status",
+    "unsupportedOrderStatus": "invalid-status"
+  }
+}
