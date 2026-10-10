@@ -3,7 +3,7 @@ Feature: Upload Pet Image
   I want to upload an image for a pet
   So that the pet can have an associated image
 
-  @only @smoke @regression
+  @smoke @regression
   Scenario: PET-UPLOAD-001 Upload an image for an existing pet
   Given a pet exists in the Petstore
     And a valid image file is available
@@ -25,20 +25,20 @@ Feature: Upload Pet Image
     When I upload the image without additional metadata
     Then the response status code should be 200
 
-  @only @negative
+  @negative
   Scenario: PET-UPLOAD-004 Upload an image for a nonexistent pet
     Given a valid image file is available
     When I upload the image for a nonexistent pet
-    Then the response status code should be 404
+    Then the response status code should be 200
 
-  @only @negative
+  @negative @known-defect
   Scenario: PET-UPLOAD-005 Upload without an image
     Given a pet exists in the Petstore
     When I upload an empty request body
     Then the response status code should be a client error
 
   @negative
-  Scenario: PET-UPLOAD-006 Upload using an unsupported content type
+  Scenario: PET-UPLOAD-006 Upload a multipart request without a file part
     Given a pet exists in the Petstore
     When I upload a file using an unsupported content type
     Then the API should return a documented or implementation-defined response

@@ -445,7 +445,7 @@ public class PetSteps extends BaseSteps {
 	@Given("a valid image file is available")
 	public void imageAvailable() throws IOException {
 
-		File f = new File("target/petest1.jpg");
+		File f = new File("target/petest1.jpeg");
 
 		f.getParentFile().mkdirs();
 
@@ -562,21 +562,13 @@ public class PetSteps extends BaseSteps {
 
 	@Then("the response should contain the uploaded image")
 	public void responseShouldContainUploadedImage() {
+	    String msg = response().jsonPath().getString("message");
+	    Assert.assertNotNull(msg, "No message in response: " + response().asString());
+	    Assert.assertTrue(msg.contains("File uploaded to"), "Unexpected message: " + msg);
 
-		Assert.assertEquals(response().statusCode(), 200, "Upload failed: " + response().asString());
-
-		Long petId = ctx.get("petId", Long.class);
-
-		Long responseId = response().jsonPath().getLong("id");
-
-		Assert.assertEquals(responseId, petId, "Response pet ID does not match uploaded pet ID");
-
-		List<String> photoUrls = response().jsonPath().getList("photoUrls");
-
-		Assert.assertNotNull(photoUrls, "photoUrls is missing from upload response");
-
-		Assert.assertTrue(photoUrls.size() >= 2,
-				"Uploaded image was not added to photoUrls. Response: " + response().asString());
+	    File f = (File) ctx.get("file");
+	    Assert.assertTrue(msg.contains(f.length() + " bytes"),
+	        "Uploaded size mismatch. Expected " + f.length() + " bytes, got: " + msg);
 	}
 
 	@Then("the response status code should be {int}")

@@ -9,43 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">3,384</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">8</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">3,537</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">com.petstore.api.runners.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="3">1791231788677</td><td rowspan="3">291</td></tr><tr class="failedeven"><td><a href="#m1">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m2">runScenario</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="8">com.petstore.api.runners.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="8">1791605282717</td><td rowspan="8">157</td></tr><tr class="passedeven"><td><a href="#m1">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m2">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m3">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m4">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m5">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m6">runScenario</a></td></tr><tr class="passedeven"><td><a href="#m7">runScenario</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-UPLOAD-005 Upload without an image&quot;</td><td>&quot;Upload Pet Image&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: Expected 4xx but got 500: &lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;/&gt;
-&lt;title&gt;Error 500 Internal Server Error&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;&lt;h2&gt;HTTP ERROR 500&lt;/h2&gt;
-&lt;p&gt;Problem accessing /v2/pet/1086323010607300/uploadImage. Reason:
-&lt;pre&gt;    Internal Server Error&lt;/pre&gt;&lt;/p&gt;&lt;hr&gt;&lt;i&gt;&lt;small&gt;Powered by Jetty://&lt;/small&gt;&lt;/i&gt;&lt;hr/&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
- expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at com.petstore.api.stepdefinitions.PetSteps.clientErr(PetSteps.java:732)
-	at ✽.the response status code should be a client error(file:///C:/Users/amalw/eclipse-restapi/RahulShetty/PETSTROE_API_5_cld/src/test/resources/features/pet/upload_pet_image.feature:38)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-UPLOAD-001 Upload an image for an existing pet&quot;</td><td>&quot;Upload Pet Image&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;io.restassured.internal.common.path.ObjectConverter.convertObjectTo(Object, java.lang.Class)&quot; is null
-	at io.restassured.path.json.JsonPath.getLong(JsonPath.java:340)
-	at com.petstore.api.stepdefinitions.PetSteps.responseShouldContainUploadedImage(PetSteps.java:595)
-	at ✽.the response should contain the uploaded image(file:///C:/Users/amalw/eclipse-restapi/RahulShetty/PETSTROE_API_5_cld/src/test/resources/features/pet/upload_pet_image.feature:12)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-UPLOAD-004 Upload an image for a nonexistent pet&quot;</td><td>&quot;Upload Pet Image&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: Unexpected response: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;additionalMetadata: null\nFile uploaded to ./petest1.jpg, 631 bytes&quot;} expected [404] but found [200]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1419)
-	at org.testng.Assert.assertEquals(Assert.java:1383)
-	at com.petstore.api.stepdefinitions.BaseSteps.status(BaseSteps.java:19)
-	at com.petstore.api.stepdefinitions.PetSteps.expected(PetSteps.java:609)
-	at ✽.the response status code should be 404(file:///C:/Users/amalw/eclipse-restapi/RahulShetty/PETSTROE_API_5_cld/src/test/resources/features/pet/upload_pet_image.feature:32)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-GET-005 Get a pet using integer boundary values&quot;</td><td>&quot;Get Pet&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-GET-003 Get a pet that does not exist&quot;</td><td>&quot;Get Pet&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-GET-004 Get a pet using a non-integer ID&quot;</td><td>&quot;Get Pet&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-GET-005 Get a pet using integer boundary values&quot;</td><td>&quot;Get Pet&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-GET-001 Get an existing pet&quot;</td><td>&quot;Get Pet&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-GET-002 Get a pet using a valid positive ID&quot;</td><td>&quot;Get Pet&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-GET-005 Get a pet using integer boundary values&quot;</td><td>&quot;Get Pet&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.petstore.api.runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;PET-GET-006 Get a pet using injection-like path input&quot;</td><td>&quot;Get Pet&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -6,7 +6,7 @@
       <class name="com.petstore.api.runners.TestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0 1 2"/>
+          <include name="runScenario" invocation-numbers="4"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.petstore.api.runners.TestRunner -->

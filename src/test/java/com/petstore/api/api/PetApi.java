@@ -72,19 +72,24 @@ public class PetApi {
 	}
 	
 	public Response upload(Long petId, File file, String additionalMetadata) {
-		RequestSpecification req = RestAssured.given().spec(ApiSpecifications.multipartSpec()); // base.url, no JSON
-																								// content type
+	    RequestSpecification req = RestAssured.given()
+	            .spec(ApiSpecifications.multipartSpec());
 
-		if (file != null) {
-			req.multiPart("file", file, "image/jpeg");
-		}
-		if (additionalMetadata != null) {
-			req.multiPart("additionalMetadata", additionalMetadata, "text/plain");
-		}
-		if (file == null && additionalMetadata == null) {
-			req.multiPart("additionalMetadata", "", "text/plain");
-		}
-		return req.log().all().post("/pet/{petId}/uploadImage", petId);
+	    if (file == null && additionalMetadata == null) {
+	        // Mirrors Swagger UI with no fields filled in: empty body, octet-stream
+	        req.contentType("application/octet-stream");
+	    } else {
+	        if (file != null) {
+	            req.multiPart("file", file, "image/jpeg");
+	        }
+	        if (additionalMetadata != null) {
+	            req.multiPart("additionalMetadata", additionalMetadata, "text/plain");
+	        }
+	    }
+	    Response r = req.log().uri().log().headers()
+	            .post("/pet/{petId}/uploadImage", petId);
+	    System.out.println("Upload status : " + r.statusCode());
+	    return r;
 	}
 
 }

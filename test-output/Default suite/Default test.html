@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>8/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 05 16:23:05 EDT 2026</td>
+<td>Started on:</td><td>Sat Oct 10 00:07:59 EDT 2026</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3384 ms)</td>
+<tr><td>Total time:</td><td>3 seconds (3537 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,83 +76,43 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-UPLOAD-005 Upload without an image", "Upload Pet Image"</td>
-<td><div><pre>java.lang.AssertionError: Expected 4xx but got 500: &lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;/&gt;
-&lt;title&gt;Error 500 Internal Server Error&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;&lt;h2&gt;HTTP ERROR 500&lt;/h2&gt;
-&lt;p&gt;Problem accessing /v2/pet/1086323010607300/uploadImage. Reason:
-&lt;pre&gt;    Internal Server Error&lt;/pre&gt;&lt;/p&gt;&lt;hr&gt;&lt;i&gt;&lt;small&gt;Powered by Jetty://&lt;/small&gt;&lt;/i&gt;&lt;hr/&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
- expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at com.petstore.api.stepdefinitions.PetSteps.clientErr(PetSteps.java:732)
-	at ✽.the response status code should be a client error(file:///C:/Users/amalw/eclipse-restapi/RahulShetty/PETSTROE_API_5_cld/src/test/resources/features/pet/upload_pet_image.feature:38)
-</pre></div><a href='#' onClick='toggleBox("stack-trace409240020", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace409240020'><pre>java.lang.AssertionError: Expected 4xx but got 500: &lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;/&gt;
-&lt;title&gt;Error 500 Internal Server Error&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;&lt;h2&gt;HTTP ERROR 500&lt;/h2&gt;
-&lt;p&gt;Problem accessing /v2/pet/1086323010607300/uploadImage. Reason:
-&lt;pre&gt;    Internal Server Error&lt;/pre&gt;&lt;/p&gt;&lt;hr&gt;&lt;i&gt;&lt;small&gt;Powered by Jetty://&lt;/small&gt;&lt;/i&gt;&lt;hr/&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
- expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at com.petstore.api.stepdefinitions.PetSteps.clientErr(PetSteps.java:732)
-	at ✽.the response status code should be a client error(file:///C:/Users/amalw/eclipse-restapi/RahulShetty/PETSTROE_API_5_cld/src/test/resources/features/pet/upload_pet_image.feature:38)
-</pre></div></td>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-GET-005 Get a pet using integer boundary values", "Get Pet"</td>
+<td></td>
 <td>0</td>
 <td>com.petstore.api.runners.TestRunner@7133da86</td></tr>
 <tr>
-<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-UPLOAD-001 Upload an image for an existing pet", "Upload Pet Image"</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;io.restassured.internal.common.path.ObjectConverter.convertObjectTo(Object, java.lang.Class)&quot; is null
-	at io.restassured.path.json.JsonPath.getLong(JsonPath.java:340)
-	at com.petstore.api.stepdefinitions.PetSteps.responseShouldContainUploadedImage(PetSteps.java:595)
-	at ✽.the response should contain the uploaded image(file:///C:/Users/amalw/eclipse-restapi/RahulShetty/PETSTROE_API_5_cld/src/test/resources/features/pet/upload_pet_image.feature:12)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1040493509", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1040493509'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Long.longValue()&quot; because the return value of &quot;io.restassured.internal.common.path.ObjectConverter.convertObjectTo(Object, java.lang.Class)&quot; is null
-	at io.restassured.path.json.JsonPath.getLong(JsonPath.java:340)
-	at com.petstore.api.stepdefinitions.PetSteps.responseShouldContainUploadedImage(PetSteps.java:595)
-	at ✽.the response should contain the uploaded image(file:///C:/Users/amalw/eclipse-restapi/RahulShetty/PETSTROE_API_5_cld/src/test/resources/features/pet/upload_pet_image.feature:12)
-</pre></div></td>
-<td>2</td>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-GET-003 Get a pet that does not exist", "Get Pet"</td>
+<td></td>
+<td>0</td>
 <td>com.petstore.api.runners.TestRunner@7133da86</td></tr>
 <tr>
-<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-UPLOAD-004 Upload an image for a nonexistent pet", "Upload Pet Image"</td>
-<td><div><pre>java.lang.AssertionError: Unexpected response: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;additionalMetadata: null\nFile uploaded to ./petest1.jpg, 631 bytes&quot;} expected [404] but found [200]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1419)
-	at org.testng.Assert.assertEquals(Assert.java:1383)
-	at com.petstore.api.stepdefinitions.BaseSteps.status(BaseSteps.java:19)
-	at com.petstore.api.stepdefinitions.PetSteps.expected(PetSteps.java:609)
-	at ✽.the response status code should be 404(file:///C:/Users/amalw/eclipse-restapi/RahulShetty/PETSTROE_API_5_cld/src/test/resources/features/pet/upload_pet_image.feature:32)
-</pre></div><a href='#' onClick='toggleBox("stack-trace653648989", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace653648989'><pre>java.lang.AssertionError: Unexpected response: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;additionalMetadata: null\nFile uploaded to ./petest1.jpg, 631 bytes&quot;} expected [404] but found [200]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1419)
-	at org.testng.Assert.assertEquals(Assert.java:1383)
-	at com.petstore.api.stepdefinitions.BaseSteps.status(BaseSteps.java:19)
-	at com.petstore.api.stepdefinitions.PetSteps.expected(PetSteps.java:609)
-	at ✽.the response status code should be 404(file:///C:/Users/amalw/eclipse-restapi/RahulShetty/PETSTROE_API_5_cld/src/test/resources/features/pet/upload_pet_image.feature:32)
-</pre></div></td>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-GET-004 Get a pet using a non-integer ID", "Get Pet"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@7133da86</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-GET-005 Get a pet using integer boundary values", "Get Pet"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@7133da86</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-GET-001 Get an existing pet", "Get Pet"</td>
+<td></td>
+<td>1</td>
+<td>com.petstore.api.runners.TestRunner@7133da86</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-GET-002 Get a pet using a valid positive ID", "Get Pet"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@7133da86</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-GET-005 Get a pet using integer boundary values", "Get Pet"</td>
+<td></td>
+<td>0</td>
+<td>com.petstore.api.runners.TestRunner@7133da86</td></tr>
+<tr>
+<td title='com.petstore.api.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.petstore.api.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PET-GET-006 Get a pet using injection-like path input", "Get Pet"</td>
+<td></td>
 <td>0</td>
 <td>com.petstore.api.runners.TestRunner@7133da86</td></tr>
 </table><p>
